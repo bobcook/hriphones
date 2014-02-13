@@ -1,0 +1,2 @@
+class ZestphoneController < ApplicationController
+end
