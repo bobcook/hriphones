@@ -1,0 +1,1 @@
+{"Zest.Telephony.Views.TwilioClientView":[1],"#initialize":[2],"retrieves a twilio token for an agent":[13],"#deviceAnswer":[19],"registers a function to confirm a page reload":[33],"disables the answer button":[40],"#deviceHangup":[48],"unregisters a function to confirm a page reload":[64],"hides the hangup button":[71]}

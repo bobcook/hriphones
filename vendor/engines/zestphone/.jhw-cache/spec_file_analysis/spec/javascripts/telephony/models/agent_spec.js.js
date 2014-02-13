@@ -1,0 +1,1 @@
+{"Zest.Telephony.Models.Agent":[1],"#status":[2],"defaults to 'offline'":[3],"#url":[9],"uses the correct path":[10],"#toggleAvailable":[16],"trigger an event":[32]}

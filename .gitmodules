@@ -1,6 +1,0 @@
-[submodule "zestphone"]
-	path = zestphone
-	url = ./vendor/engines/zestphone/
-[submodule "vendor/engines/zestphone"]
-	path = vendor/engines/zestphone
-	url = git://github.com/bobcook/hriphones.git

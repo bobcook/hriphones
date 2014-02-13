@@ -1,0 +1,1 @@
+{"Zest.Telephony.Views.ApplicationView":[1],"#initialize":[2],"on a page that does not have a \"#telephony-widget\"":[3],"logs an error":[11],"#render":[17],"displays the telephony widget":[27],"#init":[32],"validates agent's data":[44],"#setupAgent":[49],"returns the agent with attributes from #telephony-widget container":[60]}
