@@ -5,12 +5,11 @@ require 'rails/all'
 Bundler.require
 require "telephony"
 
-module PusherConfig
-  PUSHER_CONFIG = [ "app_id"=>59334, "app_key"=>"05a727cb51dd5bd1c402", "secret"=>"7ddd5a5c5220415d6ab5" ]
-end
-
 module Hriphone
   class Application < Rails::Application
+    
+    PUSHER_CONFIG = []
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
