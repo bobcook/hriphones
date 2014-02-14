@@ -19,3 +19,11 @@ else
 end
 
 
+# test if you have ENV var, load from file if not
+if ENV['PUSHER_APP_ID']
+  Pusher.app_id = ENV['PUSHER_APP_ID']
+  Pusher.key = ENV['PUSHER_APP_KEY']
+  Pusher.secret = ENV['PUSHER_SECRET']
+  #else
+  #... load from config file as before
+end
