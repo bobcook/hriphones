@@ -5,8 +5,8 @@ unless defined?(PUSHER_CONFIG) && PUSHER_CONFIG
   if File.exists? Rails.root.join(filename)
     pusher_configs = YAML.load_file Rails.root.join(filename)
     PUSHER_CONFIG = pusher_configs[Rails.env]
-    #else
-     #PUSHER_CONFIG = nil
+  else
+    PUSHER_CONFIG = nil
   end
 end
 
