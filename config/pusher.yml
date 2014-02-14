@@ -1,5 +1,12 @@
 # Copy this file to config/pusher.yml
 
+production:
+  # Get these values from
+  # https://app.pusherapp.com/apps/#{your_app_id}/api_access
+  app_id: 59334
+  app_key: 05a727cb51dd5bd1c402
+  secret: 7ddd5a5c5220415d6ab5
+
 development:
   # Get these values from
   # https://app.pusherapp.com/apps/#{your_app_id}/api_access

@@ -1,3 +1,35 @@
+production:
+  # Put your twilio account SID and auth token here (found at https://www.twilio.com/user/account):
+  account_sid: AC979c30984c061beb34796800dc2778e0
+  auth_token:  215e24a6dec2bb18b418762d66df2ab2
+
+  # A valid phone number associated with your twilio acct
+  # Should be found here: (https://www.twilio.com/user/account/phone-numbers/incoming)
+  # You don't need a leading 1, just a regular 10 digit number
+  outbound_caller_id: 435-535-0256
+
+  # The host/port/path to which twilio callbacks will be made
+  # Ex: http://example.com:8080/zestphone if your engine is mounted at /zestphone
+  # If you're following the readme, this should be EXTERNAL_HOST/zestphone
+  callback_root: http://dinosaur.hriphone.c66.me/zestphone
+
+  # The rest of this file can be modified later.
+
+  # When buying numbers for caller_id, this is the url used for inbound calls for your new number
+  voice_url: http://twimlets.com/forward?PhoneNumber=435-535-0256
+
+  # Used for validating twilio signed requests. Recommended to set
+  # this value to true, to ensure twilio callbacks come from twilio
+  use_twilio_digest_auth: false
+  # With twilio_digest_auth turned on, the domain used to check the signature
+  # if the port is 80, ignore the port; i.e., it should be just "example.com"
+  callback_domain: # example.com:8080
+  # If your "callback_root" is https, this should be true
+  behind_https_proxy: true
+
+  hold_music: http://www.hriphones.com/MusicOnHold.mp3
+  wait_music: http://www.hriphones.com/MusicOnHold.mp3
+
 development:
   # Put your twilio account SID and auth token here (found at https://www.twilio.com/user/account):
   account_sid: AC979c30984c061beb34796800dc2778e0
