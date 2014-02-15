@@ -30499,3 +30499,77 @@ Processing by Telephony::Signals::Agents::PresencesController#authenticate as */
   [1m[35m (0.1ms)[0m  COMMIT
   [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
 Completed 200 OK in 719ms (Views: 0.3ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-14 22:08:28 -0700
+Connecting to database specified by database.yml
+Processing by WidgetHostController#index as HTML
+  Rendered widget_host/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 78ms (Views: 77.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-14 22:08:30 -0700
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-14 22:08:30 -0700
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/vendor/jquery.form.js?body=1" for 127.0.0.1 at 2014-02-14 22:08:30 -0700
+Served asset /vendor/jquery.form.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/underscore.js?body=1" for 127.0.0.1 at 2014-02-14 22:08:30 -0700
+Served asset /vendor/underscore.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/vendor/backbone.js?body=1" for 127.0.0.1 at 2014-02-14 22:08:30 -0700
+Served asset /vendor/backbone.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/vendor/chosen.jquery.js?body=1" for 127.0.0.1 at 2014-02-14 22:08:30 -0700
+Served asset /vendor/chosen.jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/lib/event_logger.js?body=1" for 127.0.0.1 at 2014-02-14 22:08:30 -0700
+Served asset /lib/event_logger.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-14 22:08:30 -0700
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/telephony/widget.js" for 127.0.0.1 at 2014-02-14 22:08:30 -0700
+Served asset /telephony/widget.js - 304 Not Modified (117ms)
+
+
+Started PUT "/zestphone/agents/1" for 127.0.0.1 at 2014-02-14 22:08:30 -0700
+Processing by Telephony::AgentsController#update as */*
+  Parameters: {"status"=>"loading...", "in_transition"=>"false", "csr_id"=>"1", "csr_type"=>"", "csr_generate_caller_id"=>"", "csr_name"=>"Bob Cook", "csr_phone_number"=>"5555551234", "csr_phone_ext"=>"", "csr_sip_number"=>"", "csr_call_center_name"=>"", "csr_phone_type"=>"twilio_client", "csr_transferable_agents"=>"[]", "id"=>"1"}
+  [1m[36mTelephony::Agent Load (27.6ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (19.9ms)[0m  [1mUPDATE `telephony_agents` SET `updated_at` = '2014-02-15 05:08:30', `transferable_agents` = '--- []\n' WHERE `telephony_agents`.`id` = 1[0m
+  [1m[35m (2.9ms)[0m  COMMIT
+Completed 200 OK in 521ms (Views: 0.3ms | ActiveRecord: 88.2ms)
+
+
+Started GET "/assets/telephony/widget.css" for 127.0.0.1 at 2014-02-14 22:08:31 -0700
+Served asset /telephony/widget.css - 304 Not Modified (25ms)
+
+
+Started GET "/zestphone/twilio_client/token?csr_id=1" for 127.0.0.1 at 2014-02-14 22:08:31 -0700
+Processing by Telephony::TwilioClientController#token as */*
+  Parameters: {"csr_id"=>"1"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-14 22:08:31 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33443.4654471", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[36mTelephony::Agent Load (0.3ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTelephony::Agent Load (0.3ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
+Completed 200 OK in 742ms (Views: 0.3ms | ActiveRecord: 7.1ms)
