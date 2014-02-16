@@ -30649,3 +30649,668 @@ Processing by Telephony::Signals::Agents::PresencesController#authenticate as */
   [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
 Completed 200 OK in 704ms (Views: 0.3ms | ActiveRecord: 6.6ms)
 Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-14 22:32:14 -0700
+Connecting to database specified by database.yml
+Processing by WidgetHostController#index as HTML
+  Rendered widget_host/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 91ms (Views: 90.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-14 22:32:16 -0700
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-14 22:32:16 -0700
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/vendor/jquery.form.js?body=1" for 127.0.0.1 at 2014-02-14 22:32:16 -0700
+Served asset /vendor/jquery.form.js - 200 OK (6ms)
+
+
+Started GET "/assets/vendor/backbone.js?body=1" for 127.0.0.1 at 2014-02-14 22:32:16 -0700
+Served asset /vendor/backbone.js - 200 OK (2ms)
+
+
+Started GET "/assets/vendor/underscore.js?body=1" for 127.0.0.1 at 2014-02-14 22:32:16 -0700
+Served asset /vendor/underscore.js - 200 OK (2ms)
+
+
+Started GET "/assets/vendor/chosen.jquery.js?body=1" for 127.0.0.1 at 2014-02-14 22:32:16 -0700
+Served asset /vendor/chosen.jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/lib/event_logger.js?body=1" for 127.0.0.1 at 2014-02-14 22:32:16 -0700
+Served asset /lib/event_logger.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-14 22:32:16 -0700
+Served asset /application.js - 200 OK (29ms)
+
+
+Started GET "/assets/telephony/widget.js" for 127.0.0.1 at 2014-02-14 22:32:16 -0700
+Served asset /telephony/widget.js - 200 OK (300ms)
+
+
+Started PUT "/zestphone/agents/1" for 127.0.0.1 at 2014-02-14 22:32:16 -0700
+Processing by Telephony::AgentsController#update as */*
+  Parameters: {"status"=>"loading...", "in_transition"=>"false", "csr_id"=>"1", "csr_type"=>"", "csr_generate_caller_id"=>"", "csr_name"=>"Bob Cook", "csr_phone_number"=>"5555551234", "csr_phone_ext"=>"", "csr_sip_number"=>"", "csr_call_center_name"=>"", "csr_phone_type"=>"twilio_client", "csr_transferable_agents"=>"[]", "id"=>"1"}
+  [1m[36mTelephony::Agent Load (30.8ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (7.9ms)[0m  [1mUPDATE `telephony_agents` SET `updated_at` = '2014-02-15 05:32:17', `transferable_agents` = '--- []\n' WHERE `telephony_agents`.`id` = 1[0m
+  [1m[35m (2.3ms)[0m  COMMIT
+Completed 200 OK in 1031ms (Views: 0.3ms | ActiveRecord: 60.9ms)
+
+
+Started GET "/assets/telephony/widget.css" for 127.0.0.1 at 2014-02-14 22:32:17 -0700
+Served asset /telephony/widget.css - 304 Not Modified (16ms)
+
+
+Started GET "/zestphone/twilio_client/token?csr_id=1" for 127.0.0.1 at 2014-02-14 22:32:17 -0700
+Processing by Telephony::TwilioClientController#token as */*
+  Parameters: {"csr_id"=>"1"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-14 22:32:18 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33458.4635033", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[36mTelephony::Agent Load (0.4ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTelephony::Agent Load (0.3ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (5.5ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
+Completed 200 OK in 816ms (Views: 0.2ms | ActiveRecord: 22.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-15 10:40:40 -0700
+Connecting to database specified by database.yml
+Processing by WidgetHostController#index as HTML
+  Rendered widget_host/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 74ms (Views: 73.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-15 10:40:42 -0700
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-15 10:40:42 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/underscore.js?body=1" for 127.0.0.1 at 2014-02-15 10:40:42 -0700
+Served asset /vendor/underscore.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/jquery.form.js?body=1" for 127.0.0.1 at 2014-02-15 10:40:42 -0700
+Served asset /vendor/jquery.form.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/chosen.jquery.js?body=1" for 127.0.0.1 at 2014-02-15 10:40:42 -0700
+Served asset /vendor/chosen.jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/backbone.js?body=1" for 127.0.0.1 at 2014-02-15 10:40:42 -0700
+Served asset /vendor/backbone.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/lib/event_logger.js?body=1" for 127.0.0.1 at 2014-02-15 10:40:42 -0700
+Served asset /lib/event_logger.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-15 10:40:42 -0700
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/telephony/widget.js" for 127.0.0.1 at 2014-02-15 10:40:42 -0700
+Served asset /telephony/widget.js - 304 Not Modified (112ms)
+
+
+Started PUT "/zestphone/agents/1" for 127.0.0.1 at 2014-02-15 10:40:42 -0700
+Processing by Telephony::AgentsController#update as */*
+  Parameters: {"status"=>"loading...", "in_transition"=>"false", "csr_id"=>"1", "csr_type"=>"", "csr_generate_caller_id"=>"", "csr_name"=>"Bob Cook", "csr_phone_number"=>"5555551234", "csr_phone_ext"=>"", "csr_sip_number"=>"", "csr_call_center_name"=>"", "csr_phone_type"=>"twilio_client", "csr_transferable_agents"=>"[]", "id"=>"1"}
+  [1m[36mTelephony::Agent Load (134.3ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (13.0ms)[0m  [1mUPDATE `telephony_agents` SET `updated_at` = '2014-02-15 17:40:42', `transferable_agents` = '--- []\n' WHERE `telephony_agents`.`id` = 1[0m
+  [1m[35m (29.3ms)[0m  COMMIT
+Completed 200 OK in 587ms (Views: 0.3ms | ActiveRecord: 239.2ms)
+
+
+Started GET "/assets/telephony/widget.css" for 127.0.0.1 at 2014-02-15 10:40:43 -0700
+Served asset /telephony/widget.css - 304 Not Modified (15ms)
+
+
+Started GET "/zestphone/twilio_client/token?csr_id=1" for 127.0.0.1 at 2014-02-15 10:40:43 -0700
+Processing by Telephony::TwilioClientController#token as */*
+  Parameters: {"csr_id"=>"1"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-15 10:40:45 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33475.5711619", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[36mTelephony::Agent Load (0.4ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTelephony::Agent Load (0.3ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
+Completed 200 OK in 510ms (Views: 0.3ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-16 14:15:39 -0700
+Connecting to database specified by database.yml
+Processing by WidgetHostController#index as HTML
+  Rendered widget_host/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 77ms (Views: 76.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-16 14:15:41 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-16 14:15:41 -0700
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/vendor/underscore.js?body=1" for 127.0.0.1 at 2014-02-16 14:15:41 -0700
+Served asset /vendor/underscore.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/jquery.form.js?body=1" for 127.0.0.1 at 2014-02-16 14:15:41 -0700
+Served asset /vendor/jquery.form.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/backbone.js?body=1" for 127.0.0.1 at 2014-02-16 14:15:41 -0700
+Served asset /vendor/backbone.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/vendor/chosen.jquery.js?body=1" for 127.0.0.1 at 2014-02-16 14:15:41 -0700
+Served asset /vendor/chosen.jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/telephony/widget.js" for 127.0.0.1 at 2014-02-16 14:15:41 -0700
+Served asset /telephony/widget.js - 304 Not Modified (75ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-16 14:15:41 -0700
+Served asset /application.js - 304 Not Modified (43ms)
+
+
+Started GET "/assets/lib/event_logger.js?body=1" for 127.0.0.1 at 2014-02-16 14:15:41 -0700
+Served asset /lib/event_logger.js - 304 Not Modified (1ms)
+
+
+Started PUT "/zestphone/agents/1" for 127.0.0.1 at 2014-02-16 14:15:41 -0700
+Processing by Telephony::AgentsController#update as */*
+  Parameters: {"status"=>"loading...", "in_transition"=>"false", "csr_id"=>"1", "csr_type"=>"", "csr_generate_caller_id"=>"", "csr_name"=>"Bob Cook", "csr_phone_number"=>"5555551234", "csr_phone_ext"=>"", "csr_sip_number"=>"", "csr_call_center_name"=>"", "csr_phone_type"=>"twilio_client", "csr_transferable_agents"=>"[]", "id"=>"1"}
+  [1m[36mTelephony::Agent Load (86.5ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (18.7ms)[0m  [1mUPDATE `telephony_agents` SET `updated_at` = '2014-02-16 21:15:41', `transferable_agents` = '--- []\n' WHERE `telephony_agents`.`id` = 1[0m
+  [1m[35m (1.8ms)[0m  COMMIT
+Completed 200 OK in 609ms (Views: 0.3ms | ActiveRecord: 190.7ms)
+
+
+Started GET "/assets/telephony/widget.css" for 127.0.0.1 at 2014-02-16 14:15:42 -0700
+Served asset /telephony/widget.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/telephony/icon-spinner.gif" for 127.0.0.1 at 2014-02-16 14:15:42 -0700
+Served asset /telephony/icon-spinner.gif - 304 Not Modified (3ms)
+
+
+Started GET "/zestphone/twilio_client/token?csr_id=1" for 127.0.0.1 at 2014-02-16 14:15:42 -0700
+Processing by Telephony::TwilioClientController#token as */*
+  Parameters: {"csr_id"=>"1"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-16 14:15:42 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33475.8360965", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[36mTelephony::Agent Load (0.4ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTelephony::Agent Load (0.3ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
+Completed 200 OK in 719ms (Views: 0.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/telephony/zest-telephony.woff" for 127.0.0.1 at 2014-02-16 14:15:43 -0700
+Served asset /telephony/zest-telephony.woff - 304 Not Modified (4ms)
+Compiled jquery.js  (20ms)  (pid 97430)
+Compiled vendor/jquery.form.js  (0ms)  (pid 97430)
+Compiled vendor/underscore.js  (0ms)  (pid 97430)
+Compiled vendor/backbone.js  (0ms)  (pid 97430)
+Compiled vendor/chosen.jquery.js  (0ms)  (pid 97430)
+Compiled lib/event_logger.js  (0ms)  (pid 97430)
+Compiled application.js  (94ms)  (pid 97430)
+Compiled application.css  (0ms)  (pid 97430)
+Compiled telephony/vendor/pusher.js  (0ms)  (pid 97430)
+Compiled templates/telephony/agents_view.js  (0ms)  (pid 97430)
+Compiled templates/telephony/call_queue_view.js  (0ms)  (pid 97430)
+Compiled templates/telephony/conversation_buttons_view.js  (16ms)  (pid 97430)
+Compiled templates/telephony/conversation_view.js  (0ms)  (pid 97430)
+Compiled templates/telephony/status_view.js  (0ms)  (pid 97430)
+Compiled templates/telephony/transfer_view.js  (0ms)  (pid 97430)
+Compiled templates/telephony/twilio_client_view.js  (0ms)  (pid 97430)
+Compiled telephony/namespace.js  (0ms)  (pid 97430)
+Compiled jquery.js  (24ms)  (pid 86595)
+Compiled vendor/jquery.form.js  (1ms)  (pid 86595)
+Compiled vendor/underscore.js  (0ms)  (pid 86595)
+Compiled vendor/backbone.js  (0ms)  (pid 86595)
+Compiled vendor/chosen.jquery.js  (0ms)  (pid 86595)
+Compiled lib/event_logger.js  (0ms)  (pid 86595)
+Compiled application.js  (124ms)  (pid 86595)
+Compiled application.css  (1ms)  (pid 86595)
+Compiled telephony/vendor/pusher.js  (0ms)  (pid 86595)
+Compiled templates/telephony/agents_view.js  (0ms)  (pid 86595)
+Compiled templates/telephony/call_queue_view.js  (0ms)  (pid 86595)
+Compiled templates/telephony/conversation_buttons_view.js  (0ms)  (pid 86595)
+Compiled templates/telephony/conversation_view.js  (28ms)  (pid 86595)
+Compiled templates/telephony/status_view.js  (0ms)  (pid 86595)
+Compiled templates/telephony/transfer_view.js  (0ms)  (pid 86595)
+Compiled templates/telephony/twilio_client_view.js  (0ms)  (pid 86595)
+Compiled telephony/namespace.js  (0ms)  (pid 86595)
+Compiled jquery.js  (23ms)  (pid 76855)
+Compiled vendor/jquery.form.js  (0ms)  (pid 76855)
+Compiled vendor/underscore.js  (0ms)  (pid 76855)
+Compiled vendor/backbone.js  (0ms)  (pid 76855)
+Compiled vendor/chosen.jquery.js  (0ms)  (pid 76855)
+Compiled lib/event_logger.js  (0ms)  (pid 76855)
+Compiled application.js  (100ms)  (pid 76855)
+Compiled application.css  (1ms)  (pid 76855)
+Compiled telephony/vendor/pusher.js  (0ms)  (pid 76855)
+Compiled templates/telephony/agents_view.js  (0ms)  (pid 76855)
+Compiled templates/telephony/call_queue_view.js  (0ms)  (pid 76855)
+Compiled templates/telephony/conversation_buttons_view.js  (0ms)  (pid 76855)
+Compiled templates/telephony/conversation_view.js  (31ms)  (pid 76855)
+Compiled templates/telephony/status_view.js  (0ms)  (pid 76855)
+Compiled templates/telephony/transfer_view.js  (0ms)  (pid 76855)
+Compiled templates/telephony/twilio_client_view.js  (0ms)  (pid 76855)
+Compiled telephony/namespace.js  (0ms)  (pid 76855)
+Compiled jquery.js  (2ms)  (pid 35231)
+Compiled vendor/jquery.form.js  (0ms)  (pid 35231)
+Compiled vendor/underscore.js  (0ms)  (pid 35231)
+Compiled vendor/backbone.js  (20ms)  (pid 35231)
+Compiled vendor/chosen.jquery.js  (0ms)  (pid 35231)
+Compiled lib/event_logger.js  (0ms)  (pid 35231)
+Compiled application.js  (74ms)  (pid 35231)
+Compiled application.css  (0ms)  (pid 35231)
+Compiled telephony/vendor/pusher.js  (0ms)  (pid 35231)
+Compiled templates/telephony/agents_view.js  (0ms)  (pid 35231)
+Compiled templates/telephony/call_queue_view.js  (0ms)  (pid 35231)
+Compiled templates/telephony/conversation_buttons_view.js  (0ms)  (pid 35231)
+Compiled templates/telephony/conversation_view.js  (0ms)  (pid 35231)
+Compiled templates/telephony/status_view.js  (0ms)  (pid 35231)
+Compiled templates/telephony/transfer_view.js  (0ms)  (pid 35231)
+Compiled templates/telephony/twilio_client_view.js  (0ms)  (pid 35231)
+Compiled telephony/namespace.js  (0ms)  (pid 35231)
+Compiled jquery.js  (20ms)  (pid 77547)
+Compiled vendor/jquery.form.js  (0ms)  (pid 77547)
+Compiled vendor/underscore.js  (0ms)  (pid 77547)
+Compiled vendor/backbone.js  (0ms)  (pid 77547)
+Compiled vendor/chosen.jquery.js  (0ms)  (pid 77547)
+Compiled lib/event_logger.js  (0ms)  (pid 77547)
+Compiled application.js  (96ms)  (pid 77547)
+Compiled application.css  (0ms)  (pid 77547)
+Compiled telephony/vendor/pusher.js  (0ms)  (pid 77547)
+Compiled templates/telephony/agents_view.js  (0ms)  (pid 77547)
+Compiled templates/telephony/call_queue_view.js  (0ms)  (pid 77547)
+Compiled templates/telephony/conversation_buttons_view.js  (1ms)  (pid 77547)
+Compiled templates/telephony/conversation_view.js  (30ms)  (pid 77547)
+Compiled templates/telephony/status_view.js  (0ms)  (pid 77547)
+Compiled templates/telephony/transfer_view.js  (0ms)  (pid 77547)
+Compiled templates/telephony/twilio_client_view.js  (0ms)  (pid 77547)
+Compiled telephony/namespace.js  (0ms)  (pid 77547)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-16 15:06:00 -0700
+Connecting to database specified by database.yml
+Processing by WidgetHostController#index as HTML
+  Rendered widget_host/index.html.erb within layouts/application (2.2ms)
+Compiled jquery.js  (5ms)  (pid 66290)
+Compiled application.js  (26ms)  (pid 66290)
+Completed 200 OK in 81ms (Views: 80.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/vendor/jquery.form.js?body=1" for 127.0.0.1 at 2014-02-16 15:06:01 -0700
+Served asset /vendor/jquery.form.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-16 15:06:01 -0700
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/vendor/underscore.js?body=1" for 127.0.0.1 at 2014-02-16 15:06:01 -0700
+Served asset /vendor/underscore.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/backbone.js?body=1" for 127.0.0.1 at 2014-02-16 15:06:01 -0700
+Served asset /vendor/backbone.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/chosen.jquery.js?body=1" for 127.0.0.1 at 2014-02-16 15:06:01 -0700
+Served asset /vendor/chosen.jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/lib/event_logger.js?body=1" for 127.0.0.1 at 2014-02-16 15:06:01 -0700
+Served asset /lib/event_logger.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/telephony/widget.js" for 127.0.0.1 at 2014-02-16 15:06:01 -0700
+Compiled telephony/config.js  (1ms)  (pid 66290)
+Compiled telephony/push.js  (0ms)  (pid 66290)
+Compiled telephony/models/device.js  (0ms)  (pid 66290)
+Compiled telephony/models/agent.js  (1ms)  (pid 66290)
+Compiled telephony/models/transfer.js  (0ms)  (pid 66290)
+Compiled telephony/models/conversation.js  (0ms)  (pid 66290)
+Compiled telephony/collections/agents.js  (0ms)  (pid 66290)
+Compiled telephony/views/agents_view.js  (0ms)  (pid 66290)
+Compiled telephony/views/application_view.js  (0ms)  (pid 66290)
+Compiled telephony/views/call_queue_view.js  (0ms)  (pid 66290)
+Compiled telephony/views/conversation_buttons_view.js  (0ms)  (pid 66290)
+Compiled telephony/views/conversation_view.js  (1ms)  (pid 66290)
+Compiled telephony/views/status_view.js  (0ms)  (pid 66290)
+Compiled telephony/views/transfer_view.js  (0ms)  (pid 66290)
+Compiled telephony/views/twilio_client_view.js  (0ms)  (pid 66290)
+Compiled telephony/views/widget_view.js  (0ms)  (pid 66290)
+Compiled telephony/application.js  (216ms)  (pid 66290)
+Compiled telephony/widget.js  (228ms)  (pid 66290)
+Served asset /telephony/widget.js - 304 Not Modified (242ms)
+
+
+Started PUT "/zestphone/agents/1" for 127.0.0.1 at 2014-02-16 15:06:02 -0700
+Processing by Telephony::AgentsController#update as */*
+  Parameters: {"status"=>"loading...", "in_transition"=>"false", "csr_id"=>"1", "csr_type"=>"", "csr_generate_caller_id"=>"", "csr_name"=>"Bob Cook", "csr_phone_number"=>"5555551234", "csr_phone_ext"=>"", "csr_sip_number"=>"", "csr_call_center_name"=>"", "csr_phone_type"=>"twilio_client", "csr_transferable_agents"=>"[]", "id"=>"1"}
+  [1m[36mTelephony::Agent Load (85.6ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (23.4ms)[0m  BEGIN
+  [1m[36m (32.3ms)[0m  [1mUPDATE `telephony_agents` SET `updated_at` = '2014-02-16 22:06:02', `transferable_agents` = '--- []\n' WHERE `telephony_agents`.`id` = 1[0m
+  [1m[35m (3.1ms)[0m  COMMIT
+Completed 200 OK in 661ms (Views: 0.2ms | ActiveRecord: 244.4ms)
+
+
+Started GET "/assets/telephony/widget.css" for 127.0.0.1 at 2014-02-16 15:06:03 -0700
+Compiled telephony/reset.css  (5ms)  (pid 66290)
+Compiled telephony/font.css  (0ms)  (pid 66290)
+Compiled telephony/widget.css  (241ms)  (pid 66290)
+Served asset /telephony/widget.css - 304 Not Modified (258ms)
+
+
+Started GET "/zestphone/twilio_client/token?csr_id=1" for 127.0.0.1 at 2014-02-16 15:06:03 -0700
+Processing by Telephony::TwilioClientController#token as */*
+  Parameters: {"csr_id"=>"1"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-16 15:06:03 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33433.8547652", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[36mTelephony::Agent Load (0.4ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTelephony::Agent Load (0.4ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (3.4ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
+Completed 200 OK in 697ms (Views: 0.2ms | ActiveRecord: 7.4ms)
+Compiled jquery.js  (26ms)  (pid 80860)
+Compiled vendor/jquery.form.js  (1ms)  (pid 80860)
+Compiled vendor/underscore.js  (1ms)  (pid 80860)
+Compiled vendor/backbone.js  (1ms)  (pid 80860)
+Compiled vendor/chosen.jquery.js  (1ms)  (pid 80860)
+Compiled lib/event_logger.js  (0ms)  (pid 80860)
+Compiled application.js  (69ms)  (pid 80860)
+Compiled application.css  (0ms)  (pid 80860)
+Compiled telephony/vendor/pusher.js  (1ms)  (pid 80860)
+Compiled templates/telephony/agents_view.js  (0ms)  (pid 80860)
+Compiled templates/telephony/call_queue_view.js  (0ms)  (pid 80860)
+Compiled templates/telephony/conversation_buttons_view.js  (0ms)  (pid 80860)
+Compiled templates/telephony/conversation_view.js  (0ms)  (pid 80860)
+Compiled templates/telephony/status_view.js  (0ms)  (pid 80860)
+Compiled templates/telephony/transfer_view.js  (0ms)  (pid 80860)
+Compiled templates/telephony/twilio_client_view.js  (0ms)  (pid 80860)
+Compiled telephony/namespace.js  (0ms)  (pid 80860)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-16 15:11:57 -0700
+Connecting to database specified by database.yml
+Processing by WidgetHostController#index as HTML
+  Rendered widget_host/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-16 15:11:58 -0700
+Served asset /jquery.js - 200 OK (11ms)
+
+
+Started GET "/assets/vendor/jquery.form.js?body=1" for 127.0.0.1 at 2014-02-16 15:11:58 -0700
+Served asset /vendor/jquery.form.js - 200 OK (3ms)
+
+
+Started GET "/assets/vendor/underscore.js?body=1" for 127.0.0.1 at 2014-02-16 15:11:59 -0700
+Served asset /vendor/underscore.js - 200 OK (2ms)
+
+
+Started GET "/assets/vendor/chosen.jquery.js?body=1" for 127.0.0.1 at 2014-02-16 15:11:59 -0700
+Served asset /vendor/chosen.jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/vendor/backbone.js?body=1" for 127.0.0.1 at 2014-02-16 15:11:59 -0700
+Served asset /vendor/backbone.js - 200 OK (2ms)
+
+
+Started GET "/assets/lib/event_logger.js?body=1" for 127.0.0.1 at 2014-02-16 15:11:59 -0700
+Served asset /lib/event_logger.js - 200 OK (2ms)
+
+
+Started GET "/assets/telephony/widget.js" for 127.0.0.1 at 2014-02-16 15:11:59 -0700
+Compiled telephony/config.js  (1ms)  (pid 5000)
+Compiled telephony/push.js  (0ms)  (pid 5000)
+Compiled telephony/models/device.js  (0ms)  (pid 5000)
+Compiled telephony/models/agent.js  (0ms)  (pid 5000)
+Compiled telephony/models/transfer.js  (0ms)  (pid 5000)
+Compiled telephony/models/conversation.js  (0ms)  (pid 5000)
+Compiled telephony/collections/agents.js  (0ms)  (pid 5000)
+Compiled telephony/views/agents_view.js  (0ms)  (pid 5000)
+Compiled telephony/views/application_view.js  (0ms)  (pid 5000)
+Compiled telephony/views/call_queue_view.js  (0ms)  (pid 5000)
+Compiled telephony/views/conversation_buttons_view.js  (0ms)  (pid 5000)
+Compiled telephony/views/conversation_view.js  (0ms)  (pid 5000)
+Compiled telephony/views/status_view.js  (0ms)  (pid 5000)
+Compiled telephony/views/transfer_view.js  (0ms)  (pid 5000)
+Compiled telephony/views/twilio_client_view.js  (0ms)  (pid 5000)
+Compiled telephony/views/widget_view.js  (0ms)  (pid 5000)
+Compiled telephony/application.js  (194ms)  (pid 5000)
+Compiled telephony/widget.js  (206ms)  (pid 5000)
+Served asset /telephony/widget.js - 200 OK (254ms)
+
+
+Started PUT "/zestphone/agents/1" for 127.0.0.1 at 2014-02-16 15:11:59 -0700
+Processing by Telephony::AgentsController#update as */*
+  Parameters: {"status"=>"loading...", "in_transition"=>"false", "csr_id"=>"1", "csr_type"=>"", "csr_generate_caller_id"=>"", "csr_name"=>"Bob Cook", "csr_phone_number"=>"5555551234", "csr_phone_ext"=>"", "csr_sip_number"=>"", "csr_call_center_name"=>"", "csr_phone_type"=>"twilio_client", "csr_transferable_agents"=>"[]", "id"=>"1"}
+  [1m[36mTelephony::Agent Load (1.8ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (7.6ms)[0m  [1mUPDATE `telephony_agents` SET `updated_at` = '2014-02-16 22:11:59', `transferable_agents` = '--- []\n' WHERE `telephony_agents`.`id` = 1[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Completed 200 OK in 904ms (Views: 0.2ms | ActiveRecord: 57.8ms)
+
+
+Started GET "/assets/telephony/widget.css" for 127.0.0.1 at 2014-02-16 15:12:00 -0700
+Compiled telephony/reset.css  (3ms)  (pid 5000)
+Compiled telephony/font.css  (0ms)  (pid 5000)
+Compiled telephony/widget.css  (129ms)  (pid 5000)
+Served asset /telephony/widget.css - 304 Not Modified (140ms)
+
+
+Started GET "/zestphone/twilio_client/token?csr_id=1" for 127.0.0.1 at 2014-02-16 15:12:00 -0700
+Processing by Telephony::TwilioClientController#token as */*
+  Parameters: {"csr_id"=>"1"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-16 15:12:00 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33451.8526205", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[36mTelephony::Agent Load (0.3ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTelephony::Agent Load (0.3ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
+Completed 200 OK in 733ms (Views: 0.3ms | ActiveRecord: 4.7ms)
+Compiled jquery.js  (26ms)  (pid 23175)
+Compiled vendor/jquery.form.js  (1ms)  (pid 23175)
+Compiled vendor/underscore.js  (1ms)  (pid 23175)
+Compiled vendor/backbone.js  (1ms)  (pid 23175)
+Compiled vendor/chosen.jquery.js  (1ms)  (pid 23175)
+Compiled lib/event_logger.js  (0ms)  (pid 23175)
+Compiled application.js  (69ms)  (pid 23175)
+Compiled application.css  (1ms)  (pid 23175)
+Compiled telephony/vendor/pusher.js  (1ms)  (pid 23175)
+Compiled templates/telephony/agents_view.js  (0ms)  (pid 23175)
+Compiled templates/telephony/call_queue_view.js  (0ms)  (pid 23175)
+Compiled templates/telephony/conversation_buttons_view.js  (0ms)  (pid 23175)
+Compiled templates/telephony/conversation_view.js  (0ms)  (pid 23175)
+Compiled templates/telephony/status_view.js  (0ms)  (pid 23175)
+Compiled templates/telephony/transfer_view.js  (0ms)  (pid 23175)
+Compiled templates/telephony/twilio_client_view.js  (0ms)  (pid 23175)
+Compiled telephony/namespace.js  (0ms)  (pid 23175)
+Connecting to database specified by database.yml
+Compiled jquery.js  (5ms)  (pid 7982)
+Compiled vendor/jquery.form.js  (1ms)  (pid 7982)
+Compiled vendor/underscore.js  (1ms)  (pid 7982)
+Compiled vendor/backbone.js  (0ms)  (pid 7982)
+Compiled vendor/chosen.jquery.js  (38ms)  (pid 7982)
+Compiled lib/event_logger.js  (0ms)  (pid 7982)
+Compiled application.js  (95ms)  (pid 7982)
+Compiled application.css  (0ms)  (pid 7982)
+Compiled telephony/vendor/pusher.js  (0ms)  (pid 7982)
+Compiled templates/telephony/agents_view.js  (0ms)  (pid 7982)
+Compiled templates/telephony/call_queue_view.js  (0ms)  (pid 7982)
+Compiled templates/telephony/conversation_buttons_view.js  (0ms)  (pid 7982)
+Compiled templates/telephony/conversation_view.js  (0ms)  (pid 7982)
+Compiled templates/telephony/status_view.js  (0ms)  (pid 7982)
+Compiled templates/telephony/transfer_view.js  (0ms)  (pid 7982)
+Compiled templates/telephony/twilio_client_view.js  (0ms)  (pid 7982)
+Compiled telephony/namespace.js  (0ms)  (pid 7982)
+Compiled telephony/config.js  (1ms)  (pid 7982)
+Compiled telephony/push.js  (0ms)  (pid 7982)
+Compiled telephony/models/device.js  (0ms)  (pid 7982)
+Compiled telephony/models/agent.js  (0ms)  (pid 7982)
+Compiled telephony/models/transfer.js  (0ms)  (pid 7982)
+Compiled telephony/models/conversation.js  (0ms)  (pid 7982)
+Compiled telephony/collections/agents.js  (0ms)  (pid 7982)
+Compiled telephony/views/agents_view.js  (0ms)  (pid 7982)
+Compiled telephony/views/application_view.js  (0ms)  (pid 7982)
+Compiled telephony/views/call_queue_view.js  (0ms)  (pid 7982)
+Compiled telephony/views/conversation_buttons_view.js  (0ms)  (pid 7982)
+Compiled telephony/views/conversation_view.js  (0ms)  (pid 7982)
+Compiled telephony/views/status_view.js  (0ms)  (pid 7982)
+Compiled telephony/views/transfer_view.js  (0ms)  (pid 7982)
+Compiled telephony/views/twilio_client_view.js  (0ms)  (pid 7982)
+Compiled telephony/views/widget_view.js  (0ms)  (pid 7982)
+Compiled telephony/application.js  (180ms)  (pid 7982)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-16 15:17:17 -0700
+Connecting to database specified by database.yml
+Processing by WidgetHostController#index as HTML
+  Rendered widget_host/index.html.erb within layouts/application (2.7ms)
+Compiled application.css  (0ms)  (pid 25884)
+Compiled jquery.js  (5ms)  (pid 25884)
+Compiled vendor/jquery.form.js  (1ms)  (pid 25884)
+Compiled vendor/underscore.js  (1ms)  (pid 25884)
+Compiled vendor/backbone.js  (1ms)  (pid 25884)
+Compiled vendor/chosen.jquery.js  (1ms)  (pid 25884)
+Compiled lib/event_logger.js  (0ms)  (pid 25884)
+Compiled application.js  (72ms)  (pid 25884)
+Completed 200 OK in 108ms (Views: 107.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/vendor/backbone.js?body=1" for 127.0.0.1 at 2014-02-16 15:17:18 -0700
+Served asset /vendor/backbone.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-16 15:17:18 -0700
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/vendor/chosen.jquery.js?body=1" for 127.0.0.1 at 2014-02-16 15:17:18 -0700
+Served asset /vendor/chosen.jquery.js - 304 Not Modified (50ms)
+
+
+Started GET "/assets/vendor/jquery.form.js?body=1" for 127.0.0.1 at 2014-02-16 15:17:19 -0700
+Served asset /vendor/jquery.form.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/underscore.js?body=1" for 127.0.0.1 at 2014-02-16 15:17:19 -0700
+Served asset /vendor/underscore.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/telephony/widget.js" for 127.0.0.1 at 2014-02-16 15:17:19 -0700
+Compiled telephony/vendor/pusher.js  (1ms)  (pid 25884)
+Compiled templates/telephony/agents_view.js  (0ms)  (pid 25884)
+Compiled templates/telephony/call_queue_view.js  (0ms)  (pid 25884)
+Compiled templates/telephony/conversation_buttons_view.js  (1ms)  (pid 25884)
+Compiled templates/telephony/conversation_view.js  (0ms)  (pid 25884)
+Compiled templates/telephony/status_view.js  (0ms)  (pid 25884)
+Compiled templates/telephony/transfer_view.js  (0ms)  (pid 25884)
+Compiled templates/telephony/twilio_client_view.js  (0ms)  (pid 25884)
+Compiled telephony/namespace.js  (0ms)  (pid 25884)
+Compiled telephony/config.js  (2ms)  (pid 25884)
+Compiled telephony/push.js  (0ms)  (pid 25884)
+Compiled telephony/models/device.js  (0ms)  (pid 25884)
+Compiled telephony/models/agent.js  (0ms)  (pid 25884)
+Compiled telephony/models/transfer.js  (0ms)  (pid 25884)
+Compiled telephony/models/conversation.js  (0ms)  (pid 25884)
+Compiled telephony/collections/agents.js  (0ms)  (pid 25884)
+Compiled telephony/views/agents_view.js  (0ms)  (pid 25884)
+Compiled telephony/views/application_view.js  (0ms)  (pid 25884)
+Compiled telephony/views/call_queue_view.js  (6ms)  (pid 25884)
+Compiled telephony/views/conversation_buttons_view.js  (0ms)  (pid 25884)
+Compiled telephony/views/conversation_view.js  (0ms)  (pid 25884)
+Compiled telephony/views/status_view.js  (0ms)  (pid 25884)
+Compiled telephony/views/transfer_view.js  (0ms)  (pid 25884)
+Compiled telephony/views/twilio_client_view.js  (0ms)  (pid 25884)
+Compiled telephony/views/widget_view.js  (0ms)  (pid 25884)
+Compiled telephony/application.js  (217ms)  (pid 25884)
+Compiled telephony/widget.js  (228ms)  (pid 25884)
+Served asset /telephony/widget.js - 304 Not Modified (248ms)
+
+
+Started GET "/assets/lib/event_logger.js?body=1" for 127.0.0.1 at 2014-02-16 15:17:19 -0700
+Served asset /lib/event_logger.js - 304 Not Modified (2ms)
+
+
+Started PUT "/zestphone/agents/1" for 127.0.0.1 at 2014-02-16 15:17:19 -0700
+Processing by Telephony::AgentsController#update as */*
+  Parameters: {"status"=>"loading...", "in_transition"=>"false", "csr_id"=>"1", "csr_type"=>"", "csr_generate_caller_id"=>"", "csr_name"=>"Bob Cook", "csr_phone_number"=>"5555551234", "csr_phone_ext"=>"", "csr_sip_number"=>"", "csr_call_center_name"=>"", "csr_phone_type"=>"twilio_client", "csr_transferable_agents"=>"[]", "id"=>"1"}
+  [1m[36mTelephony::Agent Load (1.5ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mUPDATE `telephony_agents` SET `updated_at` = '2014-02-16 22:17:19', `transferable_agents` = '--- []\n' WHERE `telephony_agents`.`id` = 1[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Completed 200 OK in 874ms (Views: 0.2ms | ActiveRecord: 47.1ms)
+
+
+Started GET "/assets/telephony/widget.css" for 127.0.0.1 at 2014-02-16 15:17:20 -0700
+Compiled telephony/reset.css  (6ms)  (pid 25884)
+Compiled telephony/font.css  (0ms)  (pid 25884)
+Compiled telephony/widget.css  (127ms)  (pid 25884)
+Served asset /telephony/widget.css - 304 Not Modified (140ms)
+
+
+Started GET "/zestphone/twilio_client/token?csr_id=1" for 127.0.0.1 at 2014-02-16 15:17:20 -0700
+Processing by Telephony::TwilioClientController#token as */*
+  Parameters: {"csr_id"=>"1"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-16 15:17:20 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33434.8494333", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[36mTelephony::Agent Load (0.4ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTelephony::Agent Load (0.4ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
+Completed 200 OK in 725ms (Views: 0.4ms | ActiveRecord: 6.8ms)

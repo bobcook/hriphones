@@ -8,10 +8,15 @@ require "telephony"
 module Hriphone
   class Application < Rails::Application
     
+    def pusher_config
+      PUSHER_CONFIG
+    end
+    
     Pusher.app_id = ENV['PUSHER_APP_ID']
     Pusher.key = ENV['PUSHER_APP_KEY']
     Pusher.secret = ENV['PUSHER_SECRET']
     PUSHER_CONFIG = [Pusher.app_id, Pusher.key, Pusher.secret]
+    
     
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -57,7 +62,7 @@ module Hriphone
 
     # Enable the asset pipeline
     config.assets.enabled = true
-    config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
