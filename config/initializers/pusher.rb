@@ -17,13 +17,3 @@ if PUSHER_CONFIG
 else
   Rails.logger.warn "Telephony will not work. #{filename} does not include config for RAILS_ENV=#{Rails.env}"
 end
-
-
-# test if you have ENV var, load from file if not
-#if ENV['PUSHER_APP_ID']
-  #Pusher.app_id = ENV['PUSHER_APP_ID']
-  #Pusher.key = ENV['PUSHER_APP_KEY']
-  #Pusher.secret = ENV['PUSHER_SECRET']
-  #PUSHER_CONFIG = [Pusher.app_id, Pusher.key, Pusher.secret]
-  #else
-  #... load from config file as before

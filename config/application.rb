@@ -7,17 +7,6 @@ require "telephony"
 
 module Hriphone
   class Application < Rails::Application
-    
-    def pusher_config
-      PUSHER_CONFIG
-    end
-    
-    Pusher.app_id = ENV['PUSHER_APP_ID']
-    Pusher.key = ENV['PUSHER_APP_KEY']
-    Pusher.secret = ENV['PUSHER_SECRET']
-    PUSHER_CONFIG = [Pusher.app_id, Pusher.key, Pusher.secret]
-    
-    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
