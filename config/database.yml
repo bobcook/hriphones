@@ -23,7 +23,7 @@ telephony_production:
   database: telephony_production
   pool: 5
   username: root
-  password:
+  password: p7WZsrDSxiD3mMG
 
 cucumber: *TEST
 telephony_cucumber: *TEST
