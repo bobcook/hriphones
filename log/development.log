@@ -31486,3 +31486,260 @@ Processing by Telephony::Signals::Agents::PresencesController#authenticate as */
   [1m[35m (0.1ms)[0m  COMMIT
   [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
 Completed 200 OK in 727ms (Views: 0.3ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-16 18:19:52 -0700
+Connecting to database specified by database.yml
+Processing by WidgetHostController#index as HTML
+  Rendered widget_host/index.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 84ms (Views: 83.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-16 18:19:54 -0700
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/vendor/jquery.form.js?body=1" for 127.0.0.1 at 2014-02-16 18:19:54 -0700
+Served asset /vendor/jquery.form.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/underscore.js?body=1" for 127.0.0.1 at 2014-02-16 18:19:54 -0700
+Served asset /vendor/underscore.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/vendor/chosen.jquery.js?body=1" for 127.0.0.1 at 2014-02-16 18:19:54 -0700
+Served asset /vendor/chosen.jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/vendor/backbone.js?body=1" for 127.0.0.1 at 2014-02-16 18:19:54 -0700
+Served asset /vendor/backbone.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/lib/event_logger.js?body=1" for 127.0.0.1 at 2014-02-16 18:19:54 -0700
+Served asset /lib/event_logger.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/telephony/widget.js" for 127.0.0.1 at 2014-02-16 18:19:54 -0700
+Served asset /telephony/widget.js - 304 Not Modified (84ms)
+
+
+Started PUT "/zestphone/agents/1" for 127.0.0.1 at 2014-02-16 18:19:54 -0700
+Processing by Telephony::AgentsController#update as */*
+  Parameters: {"status"=>"loading...", "in_transition"=>"false", "csr_id"=>"1", "csr_type"=>"", "csr_generate_caller_id"=>"", "csr_name"=>"Bob Cook", "csr_phone_number"=>"5555551234", "csr_phone_ext"=>"", "csr_sip_number"=>"", "csr_call_center_name"=>"", "csr_phone_type"=>"twilio_client", "csr_transferable_agents"=>"[]", "id"=>"1"}
+  [1m[36mTelephony::Agent Load (60.6ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (9.8ms)[0m  [1mUPDATE `telephony_agents` SET `updated_at` = '2014-02-17 01:19:54', `transferable_agents` = '--- []\n' WHERE `telephony_agents`.`id` = 1[0m
+  [1m[35m (5.3ms)[0m  COMMIT
+Completed 200 OK in 606ms (Views: 1.2ms | ActiveRecord: 161.1ms)
+
+
+Started GET "/assets/telephony/widget.css" for 127.0.0.1 at 2014-02-16 18:19:55 -0700
+Served asset /telephony/widget.css - 304 Not Modified (21ms)
+
+
+Started GET "/zestphone/twilio_client/token?csr_id=1" for 127.0.0.1 at 2014-02-16 18:19:55 -0700
+Processing by Telephony::TwilioClientController#token as */*
+  Parameters: {"csr_id"=>"1"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-16 18:19:55 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33462.8773521", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[36mTelephony::Agent Load (0.5ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTelephony::Agent Load (0.3ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Signing 33462.8773521:presence-1:{"user_id":1}
+  [1m[36m (2.0ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
+Completed 200 OK in 708ms (Views: 0.3ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-17 07:55:01 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33445.10173334", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[35mTelephony::Agent Load (129.3ms)[0m  SELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mTelephony::Agent Load (1.6ms)[0m  SELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE
+  [1m[36m (4.4ms)[0m  [1mCOMMIT[0m
+Signing 33445.10173334:presence-1:{"user_id":1}
+Completed 500 Internal Server Error in 826ms
+
+SocketError (getaddrinfo: nodename nor servname provided, or not known):
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/net/http.rb:763:in `initialize'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/net/http.rb:763:in `open'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/net/http.rb:763:in `block in connect'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/timeout.rb:55:in `timeout'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/timeout.rb:100:in `timeout'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/net/http.rb:763:in `connect'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/net/http.rb:756:in `do_start'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/net/http.rb:745:in `start'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/net/http.rb:1285:in `request'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/net/http.rb:1308:in `send_entity'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/net/http.rb:1097:in `post'
+  pusher (0.11.3) lib/pusher/request.rb:30:in `send_sync'
+  pusher (0.11.3) lib/pusher/resource.rb:18:in `post'
+  pusher (0.11.3) lib/pusher/client.rb:134:in `post'
+  pusher (0.11.3) lib/pusher/client.rb:216:in `trigger'
+  pusher (0.11.3) lib/pusher/channel.rb:59:in `trigger!'
+  pusher (0.11.3) lib/pusher/channel.rb:71:in `trigger'
+  vendor/engines/zestphone/app/models/telephony/pusher_event_publisher.rb:5:in `push'
+  vendor/engines/zestphone/app/models/telephony/pusher_event_publisher.rb:13:in `publish'
+  vendor/engines/zestphone/app/models/telephony/events/initialize_widget.rb:9:in `republish_only_for'
+  vendor/engines/zestphone/app/controllers/telephony/signals/agents/presences_controller.rb:55:in `publish_events'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__2082535098375260872__process_action__1236365777878163129__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1650810527790714864__call__388185309137619708__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/bobcook/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/bobcook/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.8ms)
+  Rendered /Users/bobcook/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.8ms)
+  Rendered /Users/bobcook/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (123.8ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-17 07:55:08 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33469.9990977", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[35mTelephony::Agent Load (3.8ms)[0m  SELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mTelephony::Agent Load (1.4ms)[0m  SELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Signing 33469.9990977:presence-1:{"user_id":1}
+  [1m[35m (15.0ms)[0m  SELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'
+Completed 200 OK in 583ms (Views: 0.7ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-17 08:07:20 -0700
+Connecting to database specified by database.yml
+Processing by WidgetHostController#index as HTML
+  Rendered widget_host/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/telephony/widget.js" for 127.0.0.1 at 2014-02-17 08:07:22 -0700
+Compiled telephony/vendor/pusher.js  (1ms)  (pid 18989)
+Compiled templates/telephony/agents_view.js  (0ms)  (pid 18989)
+Compiled templates/telephony/call_queue_view.js  (0ms)  (pid 18989)
+Compiled templates/telephony/conversation_buttons_view.js  (0ms)  (pid 18989)
+Compiled templates/telephony/conversation_view.js  (0ms)  (pid 18989)
+Compiled templates/telephony/status_view.js  (0ms)  (pid 18989)
+Compiled templates/telephony/transfer_view.js  (1ms)  (pid 18989)
+Compiled templates/telephony/twilio_client_view.js  (0ms)  (pid 18989)
+Compiled telephony/namespace.js  (1ms)  (pid 18989)
+Compiled telephony/config.js  (2ms)  (pid 18989)
+Compiled telephony/push.js  (0ms)  (pid 18989)
+Compiled telephony/models/device.js  (0ms)  (pid 18989)
+Compiled telephony/models/agent.js  (0ms)  (pid 18989)
+Compiled telephony/models/transfer.js  (0ms)  (pid 18989)
+Compiled telephony/models/conversation.js  (0ms)  (pid 18989)
+Compiled telephony/collections/agents.js  (0ms)  (pid 18989)
+Compiled telephony/views/agents_view.js  (0ms)  (pid 18989)
+Compiled telephony/views/application_view.js  (0ms)  (pid 18989)
+Compiled telephony/views/call_queue_view.js  (0ms)  (pid 18989)
+Compiled telephony/views/conversation_buttons_view.js  (0ms)  (pid 18989)
+Compiled telephony/views/conversation_view.js  (0ms)  (pid 18989)
+Compiled telephony/views/status_view.js  (0ms)  (pid 18989)
+Compiled telephony/views/transfer_view.js  (0ms)  (pid 18989)
+Compiled telephony/views/twilio_client_view.js  (0ms)  (pid 18989)
+Compiled telephony/views/widget_view.js  (0ms)  (pid 18989)
+Compiled telephony/application.js  (353ms)  (pid 18989)
+Compiled telephony/widget.js  (369ms)  (pid 18989)
+Served asset /telephony/widget.js - 304 Not Modified (419ms)
+
+
+Started PUT "/zestphone/agents/1" for 127.0.0.1 at 2014-02-17 08:07:22 -0700
+Processing by Telephony::AgentsController#update as */*
+  Parameters: {"status"=>"loading...", "in_transition"=>"false", "csr_id"=>"1", "csr_type"=>"", "csr_generate_caller_id"=>"", "csr_name"=>"Bob Cook", "csr_phone_number"=>"5555551234", "csr_phone_ext"=>"", "csr_sip_number"=>"", "csr_call_center_name"=>"", "csr_phone_type"=>"twilio_client", "csr_transferable_agents"=>"[]", "id"=>"1"}
+  [1m[36mTelephony::Agent Load (99.5ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (29.6ms)[0m  [1mUPDATE `telephony_agents` SET `updated_at` = '2014-02-17 15:07:22', `transferable_agents` = '--- []\n' WHERE `telephony_agents`.`id` = 1[0m
+  [1m[35m (2.7ms)[0m  COMMIT
+Completed 200 OK in 548ms (Views: 0.3ms | ActiveRecord: 196.4ms)
+
+
+Started GET "/assets/telephony/widget.css" for 127.0.0.1 at 2014-02-17 08:07:23 -0700
+Served asset /telephony/widget.css - 304 Not Modified (10ms)
+
+
+Started GET "/zestphone/twilio_client/token?csr_id=1" for 127.0.0.1 at 2014-02-17 08:07:23 -0700
+Processing by Telephony::TwilioClientController#token as */*
+  Parameters: {"csr_id"=>"1"}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-17 08:07:26 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33446.10026249", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[36mTelephony::Agent Load (0.5ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mTelephony::Agent Load (0.5ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Signing 33446.10026249:presence-1:{"user_id":1}
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
+Completed 200 OK in 478ms (Views: 0.2ms | ActiveRecord: 7.7ms)

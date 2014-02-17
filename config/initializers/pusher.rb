@@ -17,3 +17,8 @@ if PUSHER_CONFIG
 else
   Rails.logger.warn "Telephony will not work. #{filename} does not include config for RAILS_ENV=#{Rails.env}"
 end
+
+require 'pusher'
+
+Pusher.url = "http://05a727cb51dd5bd1c402:7ddd5a5c5220415d6ab5@api.pusherapp.com/apps/59334"
+Pusher.logger = Rails.logger
