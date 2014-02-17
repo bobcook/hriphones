@@ -31884,3 +31884,53 @@ Processing by Telephony::Signals::Agents::PresencesController#authenticate as */
 Signing 33473.10194165:presence-1:{"user_id":1}
   [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
 Completed 200 OK in 535ms (Views: 0.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-17 11:54:22 -0700
+Connecting to database specified by database.yml
+Processing by WidgetHostController#index as HTML
+  Rendered widget_host/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/telephony/widget.js" for 127.0.0.1 at 2014-02-17 11:54:23 -0700
+Served asset /telephony/widget.js - 304 Not Modified (69ms)
+
+
+Started PUT "/zestphone/agents/1" for 127.0.0.1 at 2014-02-17 11:54:24 -0700
+Processing by Telephony::AgentsController#update as */*
+  Parameters: {"status"=>"loading...", "in_transition"=>"false", "csr_id"=>"1", "csr_type"=>"", "csr_generate_caller_id"=>"", "csr_name"=>"Bob Cook", "csr_phone_number"=>"5555551234", "csr_phone_ext"=>"", "csr_sip_number"=>"", "csr_call_center_name"=>"", "csr_phone_type"=>"twilio_client", "csr_transferable_agents"=>"[]", "id"=>"1"}
+  [1m[36mTelephony::Agent Load (45.1ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (24.6ms)[0m  [1mUPDATE `telephony_agents` SET `updated_at` = '2014-02-17 18:54:24', `transferable_agents` = '--- []\n' WHERE `telephony_agents`.`id` = 1[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+Completed 200 OK in 460ms (Views: 0.3ms | ActiveRecord: 122.0ms)
+
+
+Started GET "/assets/telephony/widget.css" for 127.0.0.1 at 2014-02-17 11:54:24 -0700
+Served asset /telephony/widget.css - 304 Not Modified (11ms)
+
+
+Started GET "/zestphone/twilio_client/token?csr_id=1" for 127.0.0.1 at 2014-02-17 11:54:25 -0700
+Processing by Telephony::TwilioClientController#token as */*
+  Parameters: {"csr_id"=>"1"}
+Completed 200 OK in 40ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zestphone/signals/agents/presences/authenticate" for 127.0.0.1 at 2014-02-17 11:54:27 -0700
+Processing by Telephony::Signals::Agents::PresencesController#authenticate as */*
+  Parameters: {"socket_id"=>"33453.10772656", "channel_name"=>"presence-1", "csr_id"=>"1", "csr_default_status"=>""}
+  [1m[36mTelephony::Agent Load (0.5ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTelephony::Agent Load (0.5ms)[0m  [1mSELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Signing 33453.10772656:presence-1:{"user_id":1}
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM `telephony_conversations` WHERE `telephony_conversations`.`state` = 'enqueued'[0m
+Completed 200 OK in 517ms (Views: 0.2ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/zestphone/agents" for 127.0.0.1 at 2014-02-17 11:54:35 -0700
+Processing by Telephony::AgentsController#index as HTML
+  [1m[35mTelephony::Agent Load (17.7ms)[0m  SELECT `telephony_agents`.* FROM `telephony_agents` WHERE `telephony_agents`.`csr_id` IS NULL LIMIT 1
+  [1m[36mTelephony::Agent Load (0.3ms)[0m  [1mSELECT id, csr_id, csr_type, status, name, phone_ext, phone_number FROM `telephony_agents` [0m
+Completed 200 OK in 22ms (Views: 1.0ms | ActiveRecord: 18.0ms)

@@ -1,6 +1,12 @@
 //= require "./vendor/pusher"
 
 //= require_tree "../templates/"
+//= require jquery
+//= require jquery_ujs
+//= require jquery.form
+//= require underscore
+//= require backbone
+//= require chosen.jquery
 //= require "telephony/namespace"
 //= require "telephony/config"
 //= require "telephony/push"
