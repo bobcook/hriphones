@@ -1,7 +1,7 @@
 development:
   # Put your twilio account SID and auth token here (found at https://www.twilio.com/user/account):
-  account_sid: AC979c30984c061beb34796800dc2778e0
-  auth_token:  215e24a6dec2bb18b418762d66df2ab2
+  account_sid: AC979c
+  auth_token:  215e
 
   # A valid phone number associated with your twilio acct
   # Should be found here: (https://www.twilio.com/user/account/phone-numbers/incoming)
